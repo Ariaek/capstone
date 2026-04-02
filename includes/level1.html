@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DFD Level 1 Clean</title>
+<style>
+body{
+  font-family:"Times New Roman";
+  background:#f4f4f4;
+  padding:20px;
+}
+svg{
+  width:100%;
+  max-width:1100px;
+  display:block;
+  margin:auto;
+}
+.ext,.proc{
+  fill:none;
+  stroke:#6fa8dc;
+  stroke-width:2;
+}
+.line{
+  stroke:#6fa8dc;
+  stroke-width:2;
+  fill:none;
+}
+.text{
+  font-size:16px;
+  text-anchor:middle;
+}
+.small{
+  font-size:14px;
+}
+.ds-left{
+  fill:#4f8fca;
+}
+.ds-right{
+  fill:none;
+  stroke:#6fa8dc;
+  stroke-width:2;
+}
+.white{
+  fill:#fff;
+  font-size:14px;
+  text-anchor:middle;
+}
+</style>
+</head>
+
+<body>
+
+<h2>DFD Level 1 (FINAL CLEAN)</h2>
+
+<svg viewBox="0 0 1000 1100">
+
+<defs>
+<marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#6fa8dc"/>
+</marker>
+</defs>
+
+<!-- ENTITIES -->
+<rect x="80" y="40" width="200" height="50" class="ext"/>
+<text x="180" y="70" class="text">Trainee</text>
+
+<rect x="400" y="40" width="200" height="50" class="ext"/>
+<text x="500" y="70" class="text">Training Officer</text>
+
+<rect x="720" y="40" width="200" height="50" class="ext"/>
+<text x="820" y="70" class="text">HR Department</text>
+
+<!-- PROCESS 1 -->
+<rect x="80" y="160" width="250" height="120" rx="20" class="proc"/>
+<text x="205" y="205" class="text">MONITOR</text>
+<text x="205" y="230" class="text">ATTENDANCE</text>
+<text x="205" y="255" class="text">& EVALUATION</text>
+
+<!-- PROCESS 2 -->
+<rect x="680" y="160" width="250" height="120" rx="20" class="proc"/>
+<text x="805" y="205" class="text">MANAGE</text>
+<text x="805" y="230" class="text">TRAINEE</text>
+<text x="805" y="255" class="text">RECORDS</text>
+
+<!-- DATA STORES -->
+<!-- D1 -->
+<rect x="80" y="330" width="60" height="50" class="ds-left"/>
+<rect x="140" y="330" width="180" height="50" class="ds-right"/>
+<text x="110" y="360" class="white">D1</text>
+<text x="200" y="360" class="text">Attendance Records</text>
+
+<!-- D2 -->
+<rect x="350" y="330" width="60" height="50" class="ds-left"/>
+<rect x="410" y="330" width="180" height="50" class="ds-right"/>
+<text x="380" y="360" class="white">D2</text>
+<text x="470" y="360" class="text">Evaluation Records</text>
+
+<!-- D3 -->
+<rect x="680" y="330" width="60" height="50" class="ds-left"/>
+<rect x="740" y="330" width="180" height="50" class="ds-right"/>
+<text x="710" y="360" class="white">D3</text>
+<text x="820" y="360" class="text">Trainee Records</text>
+
+<!-- PROCESS 3 -->
+<rect x="300" y="480" width="300" height="120" rx="20" class="proc"/>
+<text x="450" y="525" class="text">GENERATE REPORTS</text>
+<text x="450" y="550" class="text">& CERTIFICATES</text>
+
+<!-- TRAINING MANAGER -->
+<rect x="350" y="650" width="200" height="50" class="ext"/>
+<text x="450" y="680" class="text">Training Manager</text>
+
+<!-- PROCESS 4 -->
+<rect x="680" y="650" width="250" height="120" rx="20" class="proc"/>
+<text x="805" y="695" class="text">MANAGE</text>
+<text x="805" y="720" class="text">TRAINING</text>
+<text x="805" y="745" class="text">SCHEDULE</text>
+
+<!-- D4 -->
+<rect x="680" y="500" width="60" height="50" class="ds-left"/>
+<rect x="740" y="500" width="180" height="50" class="ds-right"/>
+<text x="710" y="530" class="white">D4</text>
+<text x="820" y="530" class="text">Training Schedule</text>
+
+<!-- D5 -->
+<rect x="300" y="820" width="60" height="50" class="ds-left"/>
+<rect x="360" y="820" width="300" height="50" class="ds-right"/>
+<text x="330" y="850" class="white">D5</text>
+<text x="510" y="850" class="text">Certificates & Reports</text>
+
+<!-- CONNECTIONS -->
+
+<!-- Trainee -->
+<line x1="180" y1="90" x2="180" y2="160" class="line" marker-end="url(#arrow)"/>
+<text x="80" y="130" class="small">Attendance</text>
+
+<!-- Officer -->
+<line x1="500" y1="90" x2="500" y2="160" class="line" marker-end="url(#arrow)"/>
+<text x="410" y="130" class="small">Validation</text>
+
+<!-- HR -->
+<line x1="820" y1="90" x2="820" y2="160" class="line" marker-end="url(#arrow)"/>
+<text x="720" y="130" class="small">Passed Info</text>
+
+<!-- Process to stores -->
+<line x1="180" y1="280" x2="180" y2="330" class="line" marker-end="url(#arrow)"/>
+<line x1="260" y1="280" x2="260" y2="330" class="line" marker-end="url(#arrow)"/>
+
+<line x1="805" y1="280" x2="805" y2="330" class="line" marker-end="url(#arrow)"/>
+
+<!-- D1 -> Reports -->
+<line x1="180" y1="380" x2="180" y2="540" class="line"/>
+<line x1="180" y1="540" x2="300" y2="540" class="line" marker-end="url(#arrow)"/>
+
+<!-- D2 -> Reports -->
+<line x1="470" y1="380" x2="470" y2="480" class="line" marker-end="url(#arrow)"/>
+
+<!-- Reports -> Manager -->
+<line x1="450" y1="600" x2="450" y2="650" class="line" marker-end="url(#arrow)"/>
+
+<!-- Manager -> Records -->
+<line x1="550" y1="675" x2="680" y2="220" class="line" marker-end="url(#arrow)"/>
+
+<!-- Manager -> Schedule -->
+<line x1="550" y1="675" x2="680" y2="710" class="line" marker-end="url(#arrow)"/>
+
+<!-- D4 -> Schedule -->
+<line x1="805" y1="550" x2="805" y2="650" class="line" marker-end="url(#arrow)"/>
+
+<!-- Reports -> D5 -->
+<line x1="450" y1="600" x2="450" y2="820" class="line" marker-end="url(#arrow)"/>
+
+</svg>
+
+</body>
+</html>

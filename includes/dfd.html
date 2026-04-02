@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PTMS DFD Final</title>
+  <style>
+    body{
+      font-family:"Times New Roman", serif;
+      background:#f3f3f3;
+      margin:0;
+      padding:20px;
+      color:#222;
+    }
+    .page{
+      max-width:1200px;
+      margin:0 auto;
+    }
+    .diagram{
+      background:#f7f7f7;
+      border:1px solid #d8d8d8;
+      margin-bottom:28px;
+      padding:14px 14px 24px;
+      overflow:auto;
+    }
+    .caption-top{
+      font-size:28px;
+      font-weight:bold;
+      margin:0 0 8px;
+    }
+    .figure{
+      text-align:center;
+      font-size:18px;
+      margin-top:8px;
+    }
+    svg{
+      width:100%;
+      height:auto;
+      display:block;
+      min-width:1000px;
+    }
+    .ext{
+      fill:none;
+      stroke:#6fa8dc;
+      stroke-width:2.2;
+    }
+    .proc{
+      fill:none;
+      stroke:#6fa8dc;
+      stroke-width:2.2;
+    }
+    .line{
+      fill:none;
+      stroke:#6fa8dc;
+      stroke-width:2.2;
+      stroke-linecap:round;
+      stroke-linejoin:round;
+    }
+    .txt{
+      font-size:20px;
+      fill:#222;
+    }
+    .small{
+      font-size:17px;
+      fill:#222;
+    }
+    .center{
+      text-anchor:middle;
+      dominant-baseline:middle;
+    }
+    .ds-left{
+      fill:#4f8fca;
+      stroke:#4f8fca;
+      stroke-width:2;
+    }
+    .ds-right{
+      fill:none;
+      stroke:#6fa8dc;
+      stroke-width:2.2;
+    }
+    .ds-txt-white{
+      font-size:18px;
+      fill:#fff;
+      font-weight:bold;
+      text-anchor:middle;
+      dominant-baseline:middle;
+    }
+    .ds-txt{
+      font-size:18px;
+      fill:#222;
+      dominant-baseline:middle;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- LEVEL 0 -->
+  <div class="diagram">
+    <div class="caption-top">3.2.1 Level 0</div>
+
+    <svg viewBox="0 0 1000 900">
+      <defs>
+        <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L10,5 L0,10 z" fill="#6fa8dc"></path>
+        </marker>
+      </defs>
+
+      <!-- Trainee -->
+      <rect x="40" y="110" width="210" height="62" class="ext"/>
+      <text x="145" y="141" class="txt center">Trainee</text>
+
+      <!-- HR -->
+      <rect x="760" y="145" width="180" height="62" class="ext"/>
+      <text x="850" y="176" class="txt center">HR Department</text>
+
+      <!-- Manager -->
+      <rect x="760" y="385" width="180" height="62" class="ext"/>
+      <text x="850" y="412" class="txt center">Training</text>
+      <text x="850" y="434" class="txt center">Manager</text>
+
+      <!-- Officer -->
+      <rect x="320" y="760" width="220" height="62" class="ext"/>
+      <text x="430" y="791" class="txt center">Training Officer</text>
+
+      <!-- Main Process -->
+      <rect x="335" y="360" rx="22" ry="22" width="300" height="140" class="proc"/>
+      <text x="485" y="402" class="txt center">TRAINING</text>
+      <text x="485" y="432" class="txt center">MANAGEMENT</text>
+      <text x="485" y="462" class="txt center">SYSTEM</text>
+
+      <!-- Trainee -> System -->
+      <path d="M250 141 L470 141 L470 360" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="345" y="110" class="small">Attendance / Time In-Out</text>
+      <text x="375" y="132" class="small">Evaluation / Feedback</text>
+
+      <!-- System -> Trainee -->
+      <path d="M335 430 L180 430 L180 172" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="28" y="475" class="small">Training Notification</text>
+      <text x="65" y="498" class="small">Schedule / Completion Status</text>
+
+      <!-- HR -> Manager -->
+      <path d="M760 176 L710 176 L710 416 L760 416" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="590" y="160" class="small">Passed Applicant</text>
+      <text x="603" y="183" class="small">Information</text>
+
+      <!-- Manager -> System -->
+      <path d="M760 400 L635 400" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="585" y="354" class="small">Encoded Trainee Details</text>
+      <text x="585" y="376" class="small">Training Setup / Assignment</text>
+
+      <!-- System -> Manager -->
+      <path d="M635 458 L760 458" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="590" y="503" class="small">Training Reports</text>
+      <text x="590" y="526" class="small">Trainee Training Status</text>
+
+      <!-- System -> Officer -->
+      <path d="M485 500 L485 760" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="170" y="690" class="small">Training Schedule</text>
+      <text x="185" y="713" class="small">Assigned Trainees</text>
+
+      <!-- Officer -> System -->
+      <path d="M430 760 L430 570 L485 570 L485 500" class="line" marker-end="url(#arrowBlue)"/>
+      <text x="540" y="682" class="small">Attendance Records</text>
+      <text x="545" y="705" class="small">Training Updates / Evaluation</text>
+    </svg>
+
+    <div class="figure">Figure</div>
+  </div>
+
+  <!-- LEVEL 1 -->
+  <div class="diagram">
+    <div class="caption-top">3.2.2 Level 1</div>
+
+    <svg viewBox="0 0 1000 1320">
+      <defs>
+        <marker id="arrowBlue2" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+          <path d="M0,0 L10,5 L0,10 z" fill="#6fa8dc"></path>
+        </marker>
+      </defs>
+
+      <!-- Top entities -->
+      <rect x="55" y="40" width="210" height="55" class="ext"/>
+      <text x="160" y="68" class="txt center">Trainee</text>
+
+      <rect x="390" y="40" width="220" height="55" class="ext"/>
+      <text x="500" y="68" class="txt center">Training Officer</text>
+
+      <rect x="720" y="40" width="210" height="55" class="ext"/>
+      <text x="825" y="68" class="txt center">HR Department</text>
+
+      <!-- Process 1 -->
+      <rect x="50" y="180" rx="22" ry="22" width="260" height="125" class="proc"/>
+      <text x="180" y="220" class="txt center">MONITOR</text>
+      <text x="180" y="250" class="txt center">ATTENDANCE &</text>
+      <text x="180" y="280" class="txt center">EVALUATION</text>
+
+      <!-- Process 2 -->
+      <rect x="685" y="180" rx="22" ry="22" width="260" height="125" class="proc"/>
+      <text x="815" y="220" class="txt center">MANAGE</text>
+      <text x="815" y="250" class="txt center">TRAINEE</text>
+      <text x="815" y="280" class="txt center">RECORDS</text>
+
+      <!-- Incoming flows -->
+      <path d="M160 95 L160 180" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="22" y="148" class="small">Attendance / Time In-Out</text>
+
+      <path d="M500 95 L500 180" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="410" y="148" class="small">Validation / Evaluation</text>
+
+      <path d="M825 95 L825 180" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="690" y="148" class="small">Passed Applicant Info</text>
+
+      <!-- Row 1 Data Stores -->
+      <rect x="60" y="395" width="60" height="58" class="ds-left"/>
+      <rect x="120" y="395" width="200" height="58" class="ds-right"/>
+      <text x="90" y="424" class="ds-txt-white">D1</text>
+      <text x="145" y="424" class="ds-txt">Attendance Records</text>
+
+      <rect x="360" y="395" width="60" height="58" class="ds-left"/>
+      <rect x="420" y="395" width="200" height="58" class="ds-right"/>
+      <text x="390" y="424" class="ds-txt-white">D2</text>
+      <text x="445" y="424" class="ds-txt">Evaluation Records</text>
+
+      <rect x="685" y="395" width="60" height="58" class="ds-left"/>
+      <rect x="745" y="395" width="220" height="58" class="ds-right"/>
+      <text x="715" y="424" class="ds-txt-white">D3</text>
+      <text x="770" y="424" class="ds-txt">Trainee Records</text>
+
+      <!-- Process to data stores -->
+      <path d="M180 305 L180 395" class="line" marker-end="url(#arrowBlue2)"/>
+      <path d="M250 305 L250 424 L360 424" class="line" marker-end="url(#arrowBlue2)"/>
+      <path d="M815 305 L815 395" class="line" marker-end="url(#arrowBlue2)"/>
+
+      <!-- Generate Reports and Certificates -->
+      <rect x="260" y="585" rx="22" ry="22" width="280" height="125" class="proc"/>
+      <text x="400" y="625" class="txt center">GENERATE REPORTS</text>
+      <text x="400" y="655" class="txt center">& CERTIFICATES</text>
+
+      <!-- D1 -> Proc -->
+      <path d="M180 453 L180 648 L260 648" class="line" marker-end="url(#arrowBlue2)"/>
+
+      <!-- D2 -> Proc -->
+      <path d="M520 453 L520 540 L400 540 L400 585" class="line" marker-end="url(#arrowBlue2)"/>
+
+      <!-- Training Manager -->
+      <rect x="255" y="800" width="250" height="55" class="ext"/>
+      <text x="380" y="828" class="txt center">Training Manager</text>
+
+      <!-- Proc -> Manager -->
+      <path d="M380 710 L380 800" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="468" y="676" class="small">Reports for Review</text>
+
+      <!-- Manager -> Manage Trainee Records -->
+      <path d="M505 828 L610 828 L610 242 L685 242" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="520" y="778" class="small">Trainee Details</text>
+      <text x="525" y="801" class="small">for Encoding</text>
+
+      <!-- D4 -->
+      <rect x="695" y="575" width="60" height="58" class="ds-left"/>
+      <rect x="755" y="575" width="200" height="58" class="ds-right"/>
+      <text x="725" y="604" class="ds-txt-white">D4</text>
+      <text x="780" y="604" class="ds-txt">Training Schedules</text>
+
+      <!-- Manage Training Schedule -->
+      <rect x="695" y="790" rx="22" ry="22" width="260" height="130" class="proc"/>
+      <text x="825" y="835" class="txt center">MANAGE</text>
+      <text x="825" y="865" class="txt center">TRAINING</text>
+      <text x="825" y="895" class="txt center">SCHEDULE</text>
+
+      <!-- Manager -> Schedule -->
+      <path d="M505 845 L695 845" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="430" y="890" class="small">Training Program Details</text>
+      <text x="455" y="913" class="small">Assignment / Approval</text>
+
+      <!-- D4 -> Schedule Proc -->
+      <path d="M825 633 L825 790" class="line" marker-end="url(#arrowBlue2)"/>
+
+      <!-- Schedule Proc -> Trainee -->
+      <path d="M695 905 L620 905 L620 118 L265 118 L265 68" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="430" y="100" class="small">Notification / Schedule</text>
+
+      <!-- D5 -->
+      <rect x="250" y="1145" width="60" height="58" class="ds-left"/>
+      <rect x="310" y="1145" width="320" height="58" class="ds-right"/>
+      <text x="280" y="1174" class="ds-txt-white">D5</text>
+      <text x="335" y="1174" class="ds-txt">Certificates and Reports</text>
+
+      <!-- Generate Reports -> D5 -->
+      <path d="M400 710 L400 1145" class="line" marker-end="url(#arrowBlue2)"/>
+
+      <!-- D5 -> Trainee -->
+      <path d="M310 1174 L180 1174 L180 95" class="line" marker-end="url(#arrowBlue2)"/>
+      <text x="22" y="1110" class="small">Certificate / Completion Status</text>
+    </svg>
+
+    <div class="figure">Figure</div>
+  </div>
+
+</div>
+</body>
+</html>
